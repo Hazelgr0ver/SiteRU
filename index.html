@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Методическое пособие для студентов">
+  <title>Методическое пособие</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Хедер -->
+  <header class="header">
+    <div class="container header-content">
+      <!-- Логотип и название -->
+      <div class="site-branding">
+        <div class="logo">
+          <img src="assets/logo.png" alt="Логотип Читадель" class="logo-image">
+        </div>
+        <div class="site-title">
+          <h1>Читадель</h1>
+        </div>
+      </div>
+  
+      <!-- Навигация -->
+      <nav class="nav">
+        <ul>
+          <li><a href="#about" class="btn btn-white btn-animated">О курсе</a></li>
+          <li><a href="#theory" class="btn btn-white btn-animated">Теория</a></li>
+          <li><a href="#cases" class="btn btn-white btn-animated">Кейсы</a></li>
+          <li><a href="#resources" class="btn btn-white btn-animated">Ресурсы</a></li>
+          <li><a href="#contacts" class="btn btn-white btn-animated">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<!-- Бургер-меню -->
+<div class="burger-menu">
+    <button class="burger-button" id="burgerButton">
+      ☰ <!-- Символ бургера -->
+    </button>
+    <div class="burger-links" id="burgerLinks">
+      <a href="#about" class="btn btn-white">О курсе</a>
+      <a href="#theory" class="btn btn-white">Теория</a>
+      <a href="#cases" class="btn btn-white">Кейсы</a>
+      <a href="#resources" class="btn btn-white">Ресурсы</a>
+      <a href="#contacts" class="btn btn-white">Контакты</a>
+    </div>
+  </div>
+  <!-- Основной контент -->
+  <main class="main">
+    <section id="about" class="section">
+      <div class="container">
+        <h2>О курсе</h2>
+        <p>Этот сайт создан как методическое пособие для студентов. Здесь вы найдете теоретические материалы, практические кейсы и дополнительные ресурсы.</p>
+      </div>
+    </section>
+
+    <section id="theory" class="section">
+        <div class="container">
+          <h2>Теоретический материал</h2>
+          <p>В этом разделе представлены лекции и основные темы курса.</p>
+          <!-- Кнопки для лекций -->
+          <div class="lecture-buttons">
+            <a href="lecture1.html" class="lecture-button">Лекция 1: Введение в дисциплину</a>
+            <a href="lecture2.html" class="lecture-button">Лекция 2: Основные понятия</a>
+            <a href="lecture3.html" class="lecture-button">Лекция 3: Практическое применение</a>
+          </div>
+        </div>
+      </section>
+
+    <section id="cases" class="section">
+      <div class="container">
+        <h2>Практические кейсы</h2>
+        <p>Здесь вы найдете примеры реальных задач и их решения.</p>
+        <!-- Пример кейса -->
+        <article>
+          <h3>Кейс 1: Анализ данных</h3>
+          <p>Описание кейса...</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="resources" class="section">
+      <div class="container">
+        <h2>Дополнительные ресурсы</h2>
+        <p>Полезные ссылки и материалы:</p>
+        <ul>
+          <li><a href="#">Книга "Основы дисциплины"</a></li>
+          <li><a href="#">Статья на сайте</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="container">
+        <h2>Контакты</h2>
+        <p>Если у вас есть вопросы, свяжитесь с нами:</p>
+        <p>Email: example@example.com</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Читадель. Создан в образовательных целях.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
