@@ -1,30 +1,50 @@
 // Правильные ответы
 const correctAnswers = {
-    q1: "b",
-    q2: "b",
-    q3: "a",
-    q4: "a",
-    q5: "b",
-    q6: "a",
-    q7: "b",
-    q8: "a",
-    q9: "a",
-    q10: "a"
-  };
-  
-  let isTestPassed = false; // Флаг для отслеживания успешного прохождения теста
+  q1: "b",
+  q2: "b",
+  q3: "a",
+  q4: "a",
+  q5: "b",
+  q6: "a",
+  q7: "b",
+  q8: "a",
+  q9: "a",
+  q10: "a"
+};
 
-// Функция проверки ответов
 function checkAnswers() {
   let score = 0;
   const totalQuestions = Object.keys(correctAnswers).length;
+  let allAnswered = true;
 
-  // Проверяем каждый ответ
+  // Очистка предыдущих стилей
+  for (let question in correctAnswers) {
+    document.querySelectorAll(`input[name="${question}"]`).forEach(input => {
+      input.closest("label").classList.remove("correct", "incorrect");
+    });
+  }
+
+  // Проверяем каждый вопрос
   for (let question in correctAnswers) {
     const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
-    if (userAnswer && userAnswer.value === correctAnswers[question]) {
-      score++;
+    
+    if (!userAnswer) {
+      allAnswered = false;
+      break;
     }
+
+    if (userAnswer.value === correctAnswers[question]) {
+      score++;
+      userAnswer.closest("label").classList.add("correct");
+    } else {
+      userAnswer.closest("label").classList.add("incorrect");
+    }
+  }
+
+  // Если не все вопросы отвечены — показываем сообщение и выходим
+  if (!allAnswered) {
+    alert("Пожалуйста, ответьте на все вопросы.");
+    return;
   }
 
   // Рассчитываем процент правильных ответов
@@ -32,38 +52,42 @@ function checkAnswers() {
 
   // Отображаем результат
   const resultMessage = document.getElementById("resultMessage");
-  const nextLectureLink = document.getElementById("nextLectureLink");
   const retryButton = document.getElementById("retryButton");
 
   if (percentage >= 60) {
     resultMessage.textContent = `Вы успешно прошли тест! Ваш результат: ${percentage}%`;
-    nextLectureLink.classList.remove("hidden");
-    isTestPassed = true; // Устанавливаем флаг успешного прохождения
+    retryButton.classList.add("hidden"); // Скрываем кнопку "Пройти тест заново"
   } else {
     resultMessage.textContent = `Вы не прошли тест. Ваш результат: ${percentage}%. Попробуйте снова.`;
-    retryButton.classList.remove("hidden");
+    retryButton.classList.remove("hidden"); // Показываем кнопку "Пройти тест заново"
   }
 
-  // Показываем блок с результатами
+  // Всегда показываем результат
   document.getElementById("testResult").classList.remove("hidden");
+
+  // Кнопка "Перейти к следующей лекции" всегда видна, если результат ≥ 60%
+  const nextLectureLink = document.getElementById("nextLectureLink");
+  nextLectureLink.classList.toggle("hidden", percentage < 60);
 }
 
+// Функция сброса теста
 function resetTest() {
-    // Сбрасываем форму
-    document.getElementById("testForm").reset();
-  
-    // Прячем блок с результатами
-    document.getElementById("testResult").classList.add("hidden");
-    document.getElementById("retryButton").classList.add("hidden");
-  
-    // Плавная прокрутка вверх к началу теста
-    const testTop = document.getElementById("testTop");
-    testTop.scrollIntoView({ behavior: "smooth" });
-  
-    // Если пользователь уже успешно прошел тест, не скрываем кнопку перехода на вторую лекцию
-    const nextLectureLink = document.getElementById("nextLectureLink");
-    if (!nextLectureLink.classList.contains("hidden")) {
-      // Кнопка уже видима, ничего не делаем
-      return;
-    }
+  document.getElementById("testForm").reset();
+
+  // Прячем блок с результатами
+  document.getElementById("testResult").classList.add("hidden");
+
+  // Скрываем кнопку "Пройти тест заново"
+  document.getElementById("retryButton").classList.add("hidden");
+
+  // Убираем подсветку с ответов
+  for (let question in correctAnswers) {
+    document.querySelectorAll(`input[name="${question}"]`).forEach(input => {
+      input.closest("label").classList.remove("correct", "incorrect");
+    });
   }
+
+  // Плавная прокрутка вверх к началу теста
+  const testTop = document.getElementById("testTop");
+  testTop.scrollIntoView({ behavior: "smooth" });
+}
