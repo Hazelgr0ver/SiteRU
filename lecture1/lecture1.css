@@ -28,7 +28,7 @@
 .test-button {
     display: inline-block;
     padding: 15px 25px;
-    background-color: #ff9800; /* Оранжевый цвет */
+    background-color: #ff9800; 
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
@@ -39,7 +39,7 @@
   }
   
   .test-button:hover {
-    background-color: #e68a00; /* Темнее при наведении */
+    background-color: #e68a00; 
     transform: translateY(-3px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   }
