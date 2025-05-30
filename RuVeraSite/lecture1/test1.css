@@ -1,0 +1,125 @@
+/* Вопросы */
+.question {
+    margin-bottom: 20px;
+  }
+  
+  .question p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .question label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Кнопка отправки */
+  .submit-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Результаты теста */
+  #testResult {
+    margin-top: 20px;
+  }
+  
+/* Кнопка "Пройти тест заново" */
+.retry-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #ff5722; 
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .retry-button:hover {
+    background-color: #e64a19; 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+#nextLectureLink {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #4caf50; 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  #nextLectureLink:hover {
+    background-color: #45a049; 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  label.correct {
+    color: green;
+    font-weight: bold;
+  }
+
+  label.incorrect {
+    color: red;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .question {
+      margin-bottom: 15px;
+    }
+  
+    .question label {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  
+    .submit-button,
+    .retry-button {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+    }
+  
+    #testResult {
+      margin-top: 15px;
+    }
+  
+    #resultMessage {
+      font-size: 14px;
+    }
+  
+    a.download-button,
+    a.test-button {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
