@@ -1,4 +1,19 @@
 /* Стили для описания лекции */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Минимальная высота — вся высота экрана */
+}
+
+/* Контейнер для основного контента */
+.container-main {
+  flex: 1; /* Занимает всё свободное пространство */
+  padding: 2rem;
+}
+
 .lecture-description {
     margin-bottom: 20px;
   }

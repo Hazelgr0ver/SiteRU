@@ -168,16 +168,17 @@
   
   /* Футер */
   .footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-  }
-  
-  .footer p {
-    font-size: 14px;
-  }
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto; /* Важно! "Липкий" футер */
+}
+
+.footer p {
+  font-size: 14px;
+  margin: 0;
+}
   
   /* Адаптивный размер для экранов до 768px */
   @media (max-width: 768px) {
