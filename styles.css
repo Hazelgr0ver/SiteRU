@@ -30,9 +30,10 @@
   
   .header-content {
     display: flex;
-    align-items: center;
+    align-items: center; /* Выравнивание по центру по вертикали */
     justify-content: space-between; /* Размещает левую и правую части на противоположных сторонах */
     width: 100%;
+    gap: 100px; /* Уменьшаем расстояние между логотипом и навигацией */
   }
   
   /* Группировка логотипа и названия */
@@ -73,6 +74,8 @@
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem; /* Уменьшаем размер текста кнопок */
+    padding: 10px 15px; /* Уменьшаем внутренние отступы */
   }
   
   .nav a:hover {
@@ -140,7 +143,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0cf;
+    background-color: #E65C34;
     border-radius: 10rem;
     z-index: -2;
   }
@@ -152,7 +155,7 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #00a8e8;
+    background-color: #E7362C;
     transition: all 0.3s;
     border-radius: 10rem;
     z-index: -1;
@@ -172,7 +175,7 @@
   color: #fff;
   text-align: center;
   padding: 15px 0;
-  margin-top: auto; /* Важно! "Липкий" футер */
+  margin-top: auto; /* "Липкий" футер */
 }
 
 .footer p {
@@ -307,7 +310,7 @@
     background-color: #007BFF;
     color: #fff;
   }
-/* styles.css */
+
 @media (max-width: 768px) {
   /* Шрифты */
   body {
@@ -377,4 +380,18 @@
   height: auto;    
   display: block;  
   margin: 20px 0;  
+}
+.top-image {
+  width: 100%;
+  text-align: center;
+}
+
+.top-image img {
+  width: 70%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Скрываем стандартное меню */
+  }
 }
